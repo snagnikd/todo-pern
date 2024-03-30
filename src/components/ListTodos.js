@@ -36,6 +36,7 @@ const ListTodos = () => {
         <table className="table mt-5 text-center">
             <thead>
             <tr>
+                <th>Status</th>
                 <th>Description</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -44,6 +45,7 @@ const ListTodos = () => {
             <tbody>
                 {todos.map(todo => (
                     <tr key={todo.todo_id}>
+                        <td>{todo.status}</td>
                         <td>{todo.description}</td>
                         <td><EditTodo todo={todo}/></td>
                         <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>Delete</button></td>
